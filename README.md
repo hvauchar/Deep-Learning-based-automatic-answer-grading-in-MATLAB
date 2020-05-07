@@ -17,8 +17,20 @@ To input text to an LSTM network, first convert the text data into numeric seque
 
 ![workflow](https://user-images.githubusercontent.com/49407332/74762228-6ec87800-52a3-11ea-8a6b-940fb95f440f.png)
 
+## Text Preprocessing stragites
+
+Create a function that tokenizes and preprocesses the text data. The function preprocessText, listed at the end of the example, performs these steps:
+
+1. Tokenize the text using tokenizedDocument.
+
+2. Convert the text to lowercase using lower.
+
+2. Erase the punctuation using erasePunctuation.
+
 ![wordCloud](https://user-images.githubusercontent.com/49407332/81259369-70f5d380-9055-11ea-9eca-84791a17addb.png)
 ![LengthHistogram](https://user-images.githubusercontent.com/49407332/81259373-73f0c400-9055-11ea-9594-12522731d2be.png)
+
+Define the Bi-LSTM network architecture. To input sequence data into the network, include a sequence input layer and set the input size to Next, include a word embedding layer of dimension 50 and the same number of words as the word encoding. Next, include an Bi-LSTM layer and set the number of hidden units to 80. To use the LSTM layer for a sequence-to-label classification problem, set the output mode to 'last'. Finally, add a fully connected layer followed by regrssion layer.
 
 ![network](https://user-images.githubusercontent.com/49407332/81259357-6d624c80-9055-11ea-9791-0011b7b4be4c.PNG)
 ![training](https://user-images.githubusercontent.com/49407332/81259363-6f2c1000-9055-11ea-91ff-bc74c6deb551.png)
